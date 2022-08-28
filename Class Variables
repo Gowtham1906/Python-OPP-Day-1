@@ -1,0 +1,29 @@
+class Supermarket:   
+
+    plastic_bag=15    
+    no_of_cust = 0
+    def __init__(self, name ,biscuit , bread , chocolate , soap):   #init is a special method used to reduce no of codes 
+         self.name = name    
+         self.biscuit = 8 * biscuit
+         self.bread = 9 * bread
+         self.chocolate = 10 * chocolate
+         self.soap = 11 * soap
+         Supermarket.no_of_cust=Supermarket.no_of_cust+1    
+
+    def items(self):  
+        list = f'''customer Name : {self.name}\n Biscuit: {self.biscuit}rs\n Bread : {self.bread}rs
+ Chocolate : {self.chocolate}rs\n soap : {self.soap}rs\n'''
+        return list
+
+    def pay_bag(self , amount):
+        self.plastic_bag =self.plastic_bag + amount
+        
+cust1 = Supermarket('gowtham',3 , 2 ,4 , 7)
+cust2 = Supermarket('pradeepkumar',6 , 3 , 4 , 5)
+
+
+cust1.pay_bag(50)
+cust2.pay_bag(100)
+print(cust1.plastic_bag)
+print(cust2.plastic_bag)
+print(Supermarket.no_of_cust)
